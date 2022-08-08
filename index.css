@@ -76,6 +76,7 @@ header nav ul{
 }
 
 main{
+    display: grid;
     height: 100%;
     place-content: center;
     align-items: center;
@@ -151,6 +152,7 @@ main .right p{
 .more-info img{
     position: absolute;
     left:12rem;
+    top: .35em;
 }
 
 .features{
@@ -179,7 +181,7 @@ main .right p{
 .crow{
     position: absolute;
     right: 0;
-    top: 4rem;
+    top: 6rem;
     width: 800px;
     opacity: .2;
 }
@@ -197,65 +199,236 @@ main .right p{
 .description p{
     margin-top: 1.5rem;
     line-height: 1.4em;
-    width: 50%;
+    width: 60%;
+    height: 40%;
     font-size: 1.5em;
 }
 
 .reviews{
-    justify-content: space-between;
-    background-color:  #1a1919;
     color: white;
+    background-color:  #1a1919;
 }
 
-.reviews .profile-image{
+.reviews .wrapper{
+    justify-content: space-between;
+    margin-top: 2.3rem;
+    padding: 2.5em;
+}
+
+.reviews .wrapper .profile-image{
     width: 70px;
     height: 70px;
     border-radius: 50%;
 }
 
 
+@media (max-width: 1400px){
+    .description p{
+        width: 85%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .crow{
+        top: 10rem;
+    }
+}
+
+@media (max-width: 1000px){
+    .forest-hero{
+        background-position: center;
+    }
+
+    main{
+        display: unset;
+    }
+
+    main .left{
+        width: 45%;
+        margin: 0 auto;
+        margin-top: 4rem;
+    }
+
+    main .right{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 4rem;
+    }
+
+    .features{
+        margin-top: 10rem;
+    }
+
+    .features .wrapper{
+        width: 90%;
+    }
+
+    .features .feature{
+        width: 100%;
+    }
+
+    .crow{
+        top: 12rem;
+    }
+
+    .reviews .wrapper{
+        display: grid;
+        place-content: center;
+        margin-left: 2em;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 3em;
+    }
+}
+
+@media (max-width: 750px){
+    .forest-hero{
+        background-position: center;
+        min-height: 1500px;
+    }
+
+    main .left{
+        margin-bottom: 3rem;
+    }
+
+    main .right{
+        margin: 0;
+        display: block;
+    }
+
+    main .right .option{
+        width: 100%;
+        margin-bottom: 4em;
+        text-align: left;
+        display: flex;
+    }
+
+    main .right .option .details{
+        margin-left: 1em;
+    }
+
+    main .right .option .details h2{
+        font-size: 1.2em;
+    }
+
+    main .right .option .details p{
+        font-size: .9em;
+    }
+
+    .features .wrapper{
+        display: block;
+    }
+
+    .features .wrapper .feature{
+        width: 85%;
+        margin: 0 auto;
+        margin-top: 2em;
+    }
+
+    .features .wrapper .feature:first-child{
+        margin-top: 0;
+    }
+
+    .description{
+        margin-left: 4em;
+        padding-right: 2em;
+    }
+}
+
 @media (max-width: 700px){
     .menu-hamburger{
         display: inline-block;
         float: right;
     }
-
+    
     .nav{
         display: none;
     }
 
     .opened{
+        z-index: 1000;
         display: block;
     }
-
+    
     .opened .menu-hamburger{
         display: none;
     }
-
+    
     .opened .menu-close{
         display: unset;
         position: absolute;
         width: 1.3em;
         right: 1.4em;
-        top: .4em;
+        top: 1.3em;
     }
-
+    
     .opened ul{
         display: unset;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         background-color: #e2e2a1;
         height: 100vh;
         width: 30%;
     }
-
+    
     .opened ul li:first-child{
         margin-top: 4em;
     }
-
+    
     .opened ul li{
         margin-bottom: 1.5em;
         margin-left: 1em;
+    }
+}
+
+@media (max-width: 500px){
+    main .left{
+        width: 75%;
+    }
+
+    main .right{
+        display: block;
+        margin: 2em;
+        
+    }
+    
+    main .right .option{
+        margin-bottom: 3em;
+        width: 100%;
+    }
+
+    main .right .room{
+        width: 150px;
+    }
+
+    .features .wrapper{
+        display: block;
+    }
+
+    .description{
+        margin-left: 2em;
+        padding-right: 1em;
+    }
+
+    .crow{
+        left: 3rem;
+    }
+
+    .reviews .wrapper{
+        display: block;
+        padding: 2em;
+    }
+
+    .reviews .wrapper .review{
+        width: 90%;
+        margin-bottom: 3em;
+    }
+
+    .reviews .wrapper .review:last-child{
+        margin-bottom: 0;
+    }
+
+    .reviews .wrapper .review h4{
+        margin-block: .3em;
     }
 }
