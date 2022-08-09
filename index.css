@@ -15,12 +15,14 @@ body, html, *{
 
 body{
     height: 100vh;
+    background-color: black;
 }
 
 .forest-hero{
     background: url("./images/apartment.jpeg");
     background-size: cover;
     min-height: 1100px;
+    animation: opacity 1s ease;
 }
 
 a{
@@ -87,6 +89,7 @@ main{
 main .left{
     width: 80%;
     margin: 0 auto;
+    animation: opacity 3s ease;
 }
 
 main .left h1{
@@ -173,9 +176,10 @@ main .right p{
 }
 
 .description{
+    background-color: white;
     position: relative;
-    margin-top: 2rem;
-    margin-left: 6rem;
+    padding-left: 6rem;
+    padding-block: 2rem;
 }
 
 .crow{
@@ -197,7 +201,6 @@ main .right p{
 }
 
 .description p{
-    margin-top: 1.5rem;
     line-height: 1.4em;
     width: 60%;
     height: 40%;
@@ -211,7 +214,6 @@ main .right p{
 
 .reviews .wrapper{
     justify-content: space-between;
-    margin-top: 2.3rem;
     padding: 2.5em;
 }
 
@@ -329,7 +331,7 @@ main .right p{
     }
 
     .description{
-        margin-left: 4em;
+        padding-left: 4em;
         padding-right: 2em;
     }
 }
@@ -388,7 +390,7 @@ main .right p{
 
     main .right{
         display: block;
-        margin: 2em;
+        margin: 1em;
         
     }
     
@@ -401,12 +403,17 @@ main .right p{
         width: 150px;
     }
 
+    
+    .more-info img{
+        left: 9rem;
+    }
+
     .features .wrapper{
         display: block;
     }
 
     .description{
-        margin-left: 2em;
+        padding-left: 2em;
         padding-right: 1em;
     }
 
@@ -432,3 +439,42 @@ main .right p{
         margin-block: .3em;
     }
 }
+
+@media (max-width: 400px) {
+    .forest-hero{
+        min-height: 1600px;
+    }
+    
+    main .right .option{
+        margin-left: .1em;
+    }
+
+    main .right .option .room{
+        width: 120px;
+    }
+
+    main .right .option .details h2{
+        font-size: 1em;
+    }
+    
+
+    main .right .option .details p{
+        font-size: .85em;
+    }
+
+    .more-info img{
+        left: 8rem;
+    }
+}
+
+
+@keyframes opacity {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
