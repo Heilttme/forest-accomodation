@@ -5,16 +5,16 @@ body, html, *{
     font-family: Nunito;
 }
 
-html{
-    width: 50%;
-}
-
 .flex{
     display: flex;
 }
 
 .grid{
     display: grid;
+}
+
+html{
+    min-width: 100vw;
 }
 
 body{
@@ -67,10 +67,17 @@ header nav ul{
     justify-content: space-between;
 }
 
-.nav-menu{
-    color: black;
+header nav ul li{
     font-weight: 500;
     font-size: 1.1em;
+}
+
+.nav-menu{
+    transition: all .5s ease-in-out;
+}
+
+.nav-menu:hover{
+    color:#009900;
 }
 
 .current{
@@ -116,10 +123,7 @@ main .left a{
     padding: .6em 2em;
     margin-top: 2em;
     border-radius: 6px;
-}
-
-main .left a:active{
-    transform: translate(1px, 1px);
+    transition: all .4s ease-in-out;
 }
 
 main .left a:hover{
@@ -145,8 +149,10 @@ main .right p{
 }
 
 .more-info{
+    width: 50%;
     margin-top: 1em;
     position: relative;
+    display: inline-block;
 }
 
 .more-info::after{
@@ -157,17 +163,25 @@ main .right p{
     width: 40%;
     height: 2px;
     background-color: #ff944d;
+    transition: all 1s ease-in-out;
+}
+
+.more-info:hover::after{
+    width: 100%;
 }
 
 .more-info-cta{
+    position: relative;
+    display: inline-block;
     color: white;
     font-size: 1.2em;
     font-weight: bold;
+    width: 100%;
 }
 
 .more-info img{
     position: absolute;
-    left:12rem;
+    right: 0rem;
     top: .35em;
 }
 
@@ -236,7 +250,7 @@ main .right p{
     border-radius: 50%;
 }
 
-@for $i from 1 through 3 {
+@for $i from 1 through 10 {
     .right .option:nth-child(#{$i}n) {
         animation: opacity 1s ease both;
         animation-delay: #{$i * 0.5}s;
@@ -299,6 +313,10 @@ main .right p{
         margin-left: 2em;
         grid-template-columns: 1fr 1fr;
         grid-gap: 3em;
+    }
+
+    .more-info a img{
+        right: -2rem;
     }
 }
 
@@ -485,6 +503,32 @@ main .right p{
     .more-info img{
         left: 8rem;
     }
+
+    .opened ul{
+        color: white;
+        width: 40%;
+    }
+}
+
+@media (max-width: 350px) {
+    main .right .option{
+        display: block;
+        text-align: center;
+    }
+
+    main .right .option p{
+        text-align: left;
+        margin-left: 2rem;
+    }
+
+    main .right .option .details .more-info{
+        margin-right: 7rem;
+    }
+
+    main .right .option .details .more-info::after{
+        left: 1.6rem;
+    }
+    
 }
 
 
